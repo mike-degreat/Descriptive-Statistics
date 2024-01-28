@@ -52,4 +52,20 @@ function variance() {
       return sum + diff * diff;
     }, 0) / (this.data.length - 1);
 }
+// 3. Standard Deviation
+function standardDeviation() {
+    return Math.sqrt(this.variance);
+}
+// 4. quartiles
+function quartiles() {
+    const sorted = this.data.slice().sort((a, b) => a - b);
+    const q1Index = Math.floor(sorted.length / 4);
+    const q3Index = Math.floor(3 * sorted.length / 4);
+    return {
+      q1: sorted[q1Index],
+      q3: sorted[q3Index],
+      interquartileRange: sorted[q3Index] - sorted[q1Index],
+    };
+}
+
 
