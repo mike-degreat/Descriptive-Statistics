@@ -44,4 +44,12 @@ function range() {
     }
     return Math.max(...this.data) - Math.min(...this.data);
 }
+// 2. Variance
+function variance() {
+    const mean = this.mean;
+    return this.data.reduce((sum, value) => {
+      const diff = value - mean;
+      return sum + diff * diff;
+    }, 0) / (this.data.length - 1);
+}
 
