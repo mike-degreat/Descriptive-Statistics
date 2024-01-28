@@ -67,5 +67,12 @@ function quartiles() {
       interquartileRange: sorted[q3Index] - sorted[q1Index],
     };
 }
+// 5. mean deviation
+function meanDeviation() {
+    const mean = this.mean;
+    return this.data.reduce((sum, value) => {
+      return sum + Math.abs(value - mean);
+    }, 0) / this.data.length;
+}
 
 
