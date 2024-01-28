@@ -39,6 +39,9 @@ function mode() {
 //Measures of dispersion
 // 1. range
 function range() {
+    if (this.data.length === 0) {
+        return NaN; // Return NaN or handle it as appropriate for empty data
+    }
     return Math.max(...this.data) - Math.min(...this.data);
 }
 
