@@ -8,3 +8,10 @@ class DescriptiveStatistics {
 // before calculating the measures of dispersion we need to derive the measure of central tendency because some key concepts in the measures of dispersion are dependent of some factors of measures of central tendency
 
 // Measures of tendency
+// 1. MEAN
+function mean() {
+    return this.data.reduce((sum, value) => sum + value, 0) / this.data.length;
+}
+
+
+
