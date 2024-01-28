@@ -75,4 +75,24 @@ function meanDeviation() {
     }, 0) / this.data.length;
 }
 
+// Modify sales values (example)
+function modifySalesValues(modifierFunction){
+     {
+    this.data = this.data.map(modifierFunction);
+  }
+}
+
+//Example
+const salesData = [100, 150, 200, 180, 250];
+const stats = new DescriptiveStatistics(salesData);
+
+console.log("Mean:", stats.mean);
+console.log("Median:", stats.median);
+console.log("Mode:", stats.mode);
+console.log("Range:", stats.range);
+console.log("Variance:", stats.variance);
+console.log("Standard Deviation:", stats.standardDeviation);
+console.log("Quartiles:", stats.quartiles);
+console.log("Mean Deviation:", stats.meanDeviation);
+
 
