@@ -36,3 +36,9 @@ function mode() {
     });
 }
 
+//Measures of dispersion
+// 1. range
+function range() {
+    return Math.max(...this.data) - Math.min(...this.data);
+}
+
