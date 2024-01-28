@@ -25,3 +25,14 @@ function median() {
       : sorted[middle];
 }
 
+//3. Mode
+function mode() {
+    const counts = {};
+    this.data.forEach((value) => {
+      counts[value] = (counts[value] || 0) + 1;
+    });
+    return Object.keys(counts).reduce((max, key) => {
+      return counts[key] > counts[max] ? key : max;
+    });
+}
+
