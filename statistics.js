@@ -10,8 +10,18 @@ class DescriptiveStatistics {
 // Measures of tendency
 // 1. MEAN
 function mean() {
+    if (this.data.length === 0) {
+        return NaN; // Return NaN (Not-a-Number) for an empty array, or handle it as appropriate
+    }
     return this.data.reduce((sum, value) => sum + value, 0) / this.data.length;
 }
 
-
+// 2. Median
+function median() {
+    const sorted = this.data.slice().sort((a, b) => a - b);
+    const middle = Math.floor(sorted.length / 2);
+    return sorted.length % 2 === 0
+      ? (sorted[middle - 1] + sorted[middle]) / 2
+      : sorted[middle];
+}
 
